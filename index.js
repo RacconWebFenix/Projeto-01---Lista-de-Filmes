@@ -82,12 +82,17 @@ app.post('/filmes', (req, res) => {
         return;
     }
 
+    // Pega o último elemento do vetor
     const lastFilme = filmes[filmes.length -1]
+    
+    // Testa se o vetor não está vazio
     if(filmes.length){
+        // Pega o valor do ultimo ID disponivel e Soma 1
         filme.id = lastFilme.id + 1;
         filmes.push(filme);
 
     } else {
+        // Caso o vetor esteja vazio o valir do id é 1
         filme.id = 1;
         filmes.push(filme);
     }
